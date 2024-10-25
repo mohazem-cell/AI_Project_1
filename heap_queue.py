@@ -5,10 +5,10 @@ class heap_queue:
     def __init__(self):
         self.heap = []
 
-    def push(self, puzzle):
+    def enqueue(self, puzzle):
         heappush(self.heap,puzzle)
 
-    def pop(self):
+    def dequeue(self):
         
         if self.is_empty():
             print("The queue is empty")

@@ -3,20 +3,21 @@ import random
 class _tile_puzzle:
     def __init__(self,number):
         self.number=number
-    
+
     def __repr__(self) -> str:
         return f'{self.number}' if self.number !=0 else ' '
 
 class board_puzzle:
-    def __init__(self,size) :
+    def __init__(self,size):
         self.size=size
         self.board=self.create_board()
         self.empty_postion=self.find_empty()
 
     
     def make_random(self):
-        numbers = list(range(self.size))  # Numbers from 0 to 8 for 1D array
-        random.shuffle(numbers)  # Shuffle to create a randomized board
+        # numbers = list(range(self.size))  # Numbers from 0 to 8 for 1D array
+        # random.shuffle(numbers)  # Shuffle to create a randomized board
+        numbers=[1,2,3,4,5,6,0,7,8]
         return numbers
     
     def create_board(self):
@@ -41,7 +42,6 @@ class board_puzzle:
         Display the board in a human-readable format.
         Prints the board with grid lines to separate rows and columns.
         """
-        empty_position = self.find_empty()
 
         # Iterate over the rows of the board
         for i in range(self.size):
